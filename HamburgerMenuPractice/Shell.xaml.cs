@@ -26,5 +26,25 @@ namespace HamburgerMenuPractice
         {
             this.InitializeComponent();
         }
+
+        public Frame AppFrame
+        {
+            get { return Content; }
+        }
+
+        private void Option1Button_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option2Button_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationPane.IsPaneOpen = !NavigationPane.IsPaneOpen;
+        }
     }
 }

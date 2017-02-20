@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="HamburgerMenuPractice.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HamburgerMenuPractice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <SplitView x:Name="NavigationPane" DisplayMode="CompactInline">
+        <SplitView.Pane>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="HamburgerButton" Grid.Row="0" Click="HamburgerButton_Click" Style="{StaticResource MenuItemButtonStyle}" Tag="&#xE700;" />
+
+                <StackPanel x:Name="NavigationMenu" Orientation="Vertical" Grid.Row="1">
+
+                    <RadioButton x:Name="Option1"
+                                 GroupName="Group1"
+                                 Checked="Option1Button_Checked"
+                                 Content="Option 1"
+                                 Tag="&#xE76E;"
+                                 Style="{StaticResource NavigationButtonStyle}"
+                                 />
+                    <RadioButton x:Name="Option2"
+                                 GroupName="Group1"
+                                 Checked="Option2Button_Checked"
+                                 Content="Option 2"
+                                 Tag="&#xE76E;"
+                                 Style="{StaticResource NavigationButtonStyle}"
+                                 />
+
+
+                </StackPanel>
+
+
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Frame x:Name="Content">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo/>
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </SplitView.Content>
+    </SplitView>
+
+    
+</Page>
